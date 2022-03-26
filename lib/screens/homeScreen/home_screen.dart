@@ -15,6 +15,70 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       // backgroundColor: Color.fromARGB(255, 248, 247, 247),
       backgroundColor: const Color(0xFFF8F8F8),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color(0xFFF8F8F8),
+        elevation: 0.0,
+        items: [
+          BottomNavigationBarItem(
+            label: "",
+            icon: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  height: 60.0,
+                  width: 60.0,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    // color: primaryColor,
+                    gradient: LinearGradient(
+                      colors: [
+                        primaryColor.withOpacity(0.5),
+                        // Color.fromARGB(255, 255, 0, 98),
+                        primaryColor,
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: const Offset(0.0, 10.0),
+                        color: primaryColor.withOpacity(0.32),
+                        blurRadius: 24.0,
+                      ),
+                    ],
+                  ),
+                ),
+                SvgPicture.asset(
+                  "lib/screens/homeScreen/assets/icons/Home.svg",
+                  height: 26.0,
+                ),
+              ],
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: "",
+            icon: SvgPicture.asset(
+              "lib/screens/homeScreen/assets/icons/Buy.svg",
+              height: 26.0,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: "",
+            icon: SvgPicture.asset(
+              "lib/screens/homeScreen/assets/icons/Heart.svg",
+              color: const Color(0xFF8B8BA1),
+              height: 26.0,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: "",
+            icon: SvgPicture.asset(
+              "lib/screens/homeScreen/assets/icons/Setting.svg",
+              height: 26.0,
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
@@ -270,7 +334,7 @@ class ProductCard extends StatelessWidget {
                     primary: primaryColor,
                     minimumSize: const Size(double.infinity, 50.0),
                     elevation: 12.0,
-                    shadowColor: primaryColor,
+                    shadowColor: primaryColor.withOpacity(0.4),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
