@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
+import '../../homeScreen/home_screen.dart';
 
 class ShopNowBoard extends StatelessWidget {
   const ShopNowBoard({
     Key? key,
     required Animation<double> squidGameShopAnimation,
     required Size size,
-  }) : _squidGameShopAnimation = squidGameShopAnimation, _size = size, super(key: key);
+  })  : _squidGameShopAnimation = squidGameShopAnimation,
+        _size = size,
+        super(key: key);
 
   final Animation<double> _squidGameShopAnimation;
   final Size _size;
@@ -17,8 +20,7 @@ class ShopNowBoard extends StatelessWidget {
     return Opacity(
       opacity: _squidGameShopAnimation.value,
       child: Transform.translate(
-        offset: Offset(
-            0.0, 200 * (1 - _squidGameShopAnimation.value)),
+        offset: Offset(0.0, 200 * (1 - _squidGameShopAnimation.value)),
         child: Padding(
           padding: const EdgeInsets.all(defaultPadding),
           child: Container(
@@ -43,12 +45,18 @@ class ShopNowBoard extends StatelessWidget {
                 ),
                 const Spacer(),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeScreen(),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: primaryColor,
                     onPrimary: Colors.white,
-                    minimumSize:
-                        const Size(double.infinity, 60.0),
+                    minimumSize: const Size(double.infinity, 60.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(14.0),
                     ),
