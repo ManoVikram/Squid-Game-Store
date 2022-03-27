@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import './screens/onboardingScreen/onboarding_screen.dart';
 import './screens/homeScreen/home_screen.dart';
+import './screens/purchaseScreen/purchase_screen.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class SquidGameShop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HomeScreen(),
+      body: PurchaseScreen(),
     );
   }
 }
