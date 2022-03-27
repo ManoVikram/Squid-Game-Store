@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 2000),
     )..forward();
   }
 
@@ -172,6 +172,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   name: "Supervisor toy",
                                   image:
                                       "lib/screens/homeScreen/assets/images/StaffToy_01.png",
+                                  isStarred: true,
                                 ),
                                 ProductCard(
                                   size: _size,
@@ -292,5 +293,3 @@ class SlideTranslateAnimation extends StatelessWidget {
     );
   }
 }
-
-

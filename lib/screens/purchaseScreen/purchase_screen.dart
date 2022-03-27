@@ -4,7 +4,16 @@ import 'package:flutter_svg/svg.dart';
 import '../../constants.dart';
 
 class PurchaseScreen extends StatelessWidget {
-  const PurchaseScreen({Key? key}) : super(key: key);
+  const PurchaseScreen({
+    Key? key,
+    required this.image,
+    required this.name,
+    required this.price,
+  }) : super(key: key);
+
+  final String image;
+  final String name;
+  final double price;
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +64,9 @@ class PurchaseScreen extends StatelessWidget {
                       ),
                     ),
                     Hero(
-                      tag: "image",
+                      tag: image,
                       child: Image.asset(
-                        "lib/screens/purchaseScreen/assets/images/StaffToy_01.png",
+                        image,
                         height: 380.0,
                         fit: BoxFit.contain,
                       ),
@@ -73,19 +82,19 @@ class PurchaseScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Supervisor toy",
+                    Text(
+                      name,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 38.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: defaultPadding),
-                    const Text(
-                      "\$${79.9}",
-                      style: TextStyle(
+                    Text(
+                      "\$$price",
+                      style: const TextStyle(
                         color: Color(0xFF8B8BA1),
                         fontSize: 28.0,
                         fontWeight: FontWeight.bold,

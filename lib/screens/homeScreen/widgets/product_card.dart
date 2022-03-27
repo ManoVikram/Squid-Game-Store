@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:squid_game_shop/screens/purchaseScreen/purchase_screen.dart';
 
 import '../../../constants.dart';
 
@@ -9,12 +10,14 @@ class ProductCard extends StatelessWidget {
     required Size size,
     required this.name,
     required this.image,
+    this.isStarred = false,
   })  : _size = size,
         super(key: key);
 
   final Size _size;
   final String name;
   final String image;
+  final bool isStarred;
 
   @override
   Widget build(BuildContext context) {
@@ -60,13 +63,25 @@ class ProductCard extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    SvgPicture.asset(
-                        "lib/screens/homeScreen/assets/icons/Star.svg"),
+                    if (isStarred)
+                      SvgPicture.asset(
+                          "lib/screens/homeScreen/assets/icons/Star.svg"),
                   ],
                 ),
                 const SizedBox(height: defaultPadding),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PurchaseScreen(
+                          image: image,
+                          name: name,
+                          price: 10.4,
+                        ),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: primaryColor,
                     minimumSize: const Size(double.infinity, 50.0),
@@ -89,10 +104,13 @@ class ProductCard extends StatelessWidget {
             ),
           ),
         ),
-        Image.asset(
-          image,
-          fit: BoxFit.cover,
-          height: _size.height * 0.41,
+        Hero(
+          tag: image,
+          child: Image.asset(
+            image,
+            fit: BoxFit.cover,
+            height: _size.height * 0.41,
+          ),
         ),
       ],
     );

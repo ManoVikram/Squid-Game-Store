@@ -31,8 +31,8 @@ class SquidGameShop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: PurchaseScreen(),
+    return const Scaffold(
+      body: OnboardingScreen(),
     );
   }
 }
