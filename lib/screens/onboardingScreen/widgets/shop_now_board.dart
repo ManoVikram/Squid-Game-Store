@@ -46,10 +46,20 @@ class ShopNowBoard extends StatelessWidget {
                 const Spacer(),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
+                    /* Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => HomeScreen(),
+                      ),
+                    ); */
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            FadeTransition(
+                          opacity: animation,
+                          child: HomeScreen(),
+                        ),
                       ),
                     );
                   },

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:squid_game_shop/screens/purchaseScreen/purchase_screen.dart';
 
 import '../../../constants.dart';
+
+import '../../purchaseScreen/purchase_screen.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -71,13 +72,27 @@ class ProductCard extends StatelessWidget {
                 const SizedBox(height: defaultPadding),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
+                    /* Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PurchaseScreen(
                           image: image,
                           name: name,
                           price: 10.4,
+                        ),
+                      ),
+                    ); */
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            FadeTransition(
+                          opacity: animation,
+                          child: PurchaseScreen(
+                            image: image,
+                            name: name,
+                            price: 99.9,
+                          ),
                         ),
                       ),
                     );
