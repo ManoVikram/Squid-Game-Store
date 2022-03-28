@@ -1,16 +1,10 @@
-# squid_game_shop
+# Squid Game Shop
 
-A new Flutter project.
+The Squid Game web series on Netflix got super-duper famous!
 
-## Getting Started
+If something's getting famous positively, we all make our fan art and stuff.
 
-This project is a starting point for a Flutter application.
+So, here an app - Squid Game Shop buit with Flutter!
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## UI Credits
+- ![ui.johnson - Instagram](https://www.instagram.com/reel/CbJ9y01gpdJ/?utm_source=ig_web_button_share_sheet)
